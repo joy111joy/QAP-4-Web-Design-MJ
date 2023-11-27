@@ -1,4 +1,5 @@
 // This file contains the code for the motel customer object and the code to display the customer's information on the webpage
+// Included in the repository: QAP-4-Web-Design-MJ
 // Date: 11/23/2023 - 11/27/2023
 // Written by: Mitchel Joy
 
