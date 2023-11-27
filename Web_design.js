@@ -6,11 +6,11 @@ const motelCustomer = {
     birthday: "2000-10-06",
     roomPref: ["111", "103", "119"],
     payMethod: "Credit",
-    Address: {
+    address: {
         streetAddress: "123 Easy Street",
-        City: "Townville",
-        Province: "NL",
-        PostalCode: "A1A 1A1"
+        city: "Townville",
+        province: "NL",
+        postalCode: "A1A 1A1"
     },
     phoneNum: "(123)654-7890",
     checkInOutDates: 
@@ -29,7 +29,7 @@ const motelCustomer = {
 
         const Duration = this.checkInOutDates.checkOut - this.checkInOutDates.checkIn
 
-        durationInDays = Math.ceil(Duration/ (1000 * 60 * 60 * 24)) // converts milliseconds (/1000)to seconds (/60) to minutes (/60) to hours(/60) to days (/24)
+        const durationInDays = Math.ceil(Duration/ (1000 * 60 * 60 * 24)) // converts milliseconds (/1000)to seconds (/60) to minutes (/60) to hours(/60) to days (/24)
 
         return durationInDays
     },
@@ -46,13 +46,13 @@ const motelCustomer = {
 
 let roomPrefDisp = motelCustomer.roomPref.join(", ");
 
-let CustInfo = `${motelCustomer.firstName} ${motelCustomer.lastName} will be staying with us on ${motelCustomer.checkInFormat()}. \
+let CustInfo = `<p>${motelCustomer.firstName} ${motelCustomer.lastName} will be staying with us on ${motelCustomer.checkInFormat()}. \
 ${motelCustomer.title}. ${motelCustomer.lastName}'s stay will last ${motelCustomer.stayDuration()} days and will be checking out on \
 ${motelCustomer.checkOutFormat()}. The customer has expressed their preference over the rooms ${roomPrefDisp} and will \
 be paying for their stay using ${motelCustomer.payMethod}. ${motelCustomer.title}. ${motelCustomer.lastName} is ${motelCustomer.custAge()} \
-years old. They live in ${motelCustomer.Address.Province} their address is ${motelCustomer.Address.streetAddress}, \
-${motelCustomer.Address.City}. Their phone number is ${motelCustomer.phoneNum} and their postal code is ${motelCustomer.Address.PostalCode}. \
-Please give ${motelCustomer.title}. ${motelCustomer.lastName} the best possible stay by catering the their every possible request.
+years old. They live in ${motelCustomer.address.province} their address is ${motelCustomer.address.streetAddress}, \
+${motelCustomer.address.city}. Their phone number is ${motelCustomer.phoneNum} and their postal code is ${motelCustomer.address.postalCode}. \
+Please give ${motelCustomer.title}. ${motelCustomer.lastName} the best possible stay by catering the their every possible request.</p>
 `;
 
 console.log(CustInfo)
